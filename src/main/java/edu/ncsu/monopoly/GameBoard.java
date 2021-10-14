@@ -1,17 +1,16 @@
 package edu.ncsu.monopoly;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Hashtable;
 
 public class GameBoard {
 
-	private ArrayList cells = new ArrayList();
-    private ArrayList chanceCards = new ArrayList();
+	private ArrayList<Cell> cells = new ArrayList<>();
+    private ArrayList<Card> chanceCards = new ArrayList<>();
 	//the key of colorGroups is the name of the color group.
-	private Hashtable colorGroups = new Hashtable();
-	private ArrayList communityChestCards = new ArrayList();
-	private GameMaster gameMaster;
-	
+	private HashMap<String, Integer> colorGroups = new HashMap<>();
+	private ArrayList<Card> communityChestCards = new ArrayList<>();
 	public GameBoard() {
 		Cell go = new GoCell();
 		addCell(go);
@@ -36,21 +35,21 @@ public class GameBoard {
 	}
 
     public Card drawCCCard() {
-        Card card = (Card)communityChestCards.get(0);
+        Card card = communityChestCards.get(0);
         communityChestCards.remove(0);
         addCard(card);
         return card;
     }
 
     public Card drawChanceCard() {
-        Card card = (Card)chanceCards.get(0);
+        Card card = chanceCards.get(0);
         chanceCards.remove(0);
         addCard(card);
         return card;
     }
 
 	public Cell getCell(int newIndex) {
-		return (Cell)cells.get(newIndex);
+		return cells.get(newIndex);
 	}
 	
 	public int getCellNumber() {
@@ -75,7 +74,7 @@ public class GameBoard {
 	}
 	
 	public int getPropertyNumberForColor(String name) {
-		Integer number = (Integer)colorGroups.get(name);
+		Integer number = colorGroups.get(name);
 		if(number != null) {
 			return number.intValue();
 		}

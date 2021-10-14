@@ -1,7 +1,11 @@
 package edu.ncsu.monopoly;
 
 public class Die {
+	public static double random() {
+		return Math.random();
+	}
+
 	public int getRoll() {
-		return (int)(Math.random() * 6) + 1;
+		return (int)(Die.random() * 6) + 1;
 	}
 }
