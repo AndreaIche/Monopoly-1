@@ -54,7 +54,7 @@ public class GameBoard {
 	
 	public int getCellNumber() {
 		return cells.size();
-	}
+	} 
 	
 	public PropertyCell[] getPropertiesInMonopoly(String color) {
 		PropertyCell[] monopolyCells = 
