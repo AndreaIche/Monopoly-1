@@ -14,12 +14,16 @@ import javax.swing.JDialog;
 import javax.swing.JLabel;
 
 import edu.ncsu.monopoly.*;
-import edu.ncsu.monopoly.TradeDeal;
-import edu.ncsu.monopoly.TradeDialog;
 
 public class GUITradeDialog extends JDialog implements TradeDialog {
-    private JButton btnOK, btnCancel;
-    private JComboBox cboSellers, cboProperties;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private JButton btnOK;
+	private JButton btnCancel;
+    private JComboBox<Player> cboSellers; 
+    private JComboBox<Cell> cboProperties;
 
     private TradeDeal deal;
     private JTextField txtAmount;
@@ -28,8 +32,8 @@ public class GUITradeDialog extends JDialog implements TradeDialog {
         super(parent);
         
         setTitle("Trade Property");
-        cboSellers = new JComboBox();
-        cboProperties = new JComboBox();
+        cboSellers = new JComboBox<Player>();
+        cboProperties = new JComboBox<Cell>();
         txtAmount = new JTextField();
         btnOK = new JButton("OK");
         btnCancel = new JButton("Cancel");
@@ -91,8 +95,8 @@ public class GUITradeDialog extends JDialog implements TradeDialog {
     }
 
     private void buildSellersCombo() {
-        List sellers = GameMaster.instance().getSellerList();
-        for (Iterator iter = sellers.iterator(); iter.hasNext();) {
+        List<?> sellers = GameMaster.instance().getSellerList();
+        for (Iterator<?> iter = sellers.iterator(); iter.hasNext();) {
             Player player = (Player) iter.next();
             cboSellers.addItem(player);
         }

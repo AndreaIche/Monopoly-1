@@ -14,6 +14,11 @@ import edu.ncsu.monopoly.GameMaster;
 
 public class UtilDiceRoll extends JDialog {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	public static int showDialog() {
 		UtilDiceRoll dialog = new UtilDiceRoll();
 		dialog.show();

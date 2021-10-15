@@ -14,7 +14,12 @@ import javax.swing.JTextField;
 
 
 public class TestDiceRollDialog extends JDialog {
-    private JButton btnOK, btnCancel;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private JButton btnOK;
+	private JButton btnCancel;
     private JTextField txtDiceRoll;
     private int[] diceRoll;
     

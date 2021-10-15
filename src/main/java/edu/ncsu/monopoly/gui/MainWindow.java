@@ -24,8 +24,12 @@ import edu.ncsu.monopoly.MonopolyGUI;
 import edu.ncsu.monopoly.Player;
 
 public class MainWindow extends JFrame implements MonopolyGUI{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	JPanel eastPanel = new JPanel();
-	ArrayList guiCells = new ArrayList();
+	ArrayList<GUICell> guiCells = new ArrayList<>();
 
 	JPanel northPanel = new JPanel();
 	PlayerPanel[] playerPanels;
@@ -39,7 +43,7 @@ public class MainWindow extends JFrame implements MonopolyGUI{
 		eastPanel.setBorder(new LineBorder(Color.BLACK));
 		
 		Container c = getContentPane();
-		//setSize(800, 600);
+		
 		Toolkit tk = Toolkit.getDefaultToolkit();
 		Dimension d = tk.getScreenSize();
 		setSize(d);
@@ -55,9 +59,9 @@ public class MainWindow extends JFrame implements MonopolyGUI{
 		});
 	}
 	
-	private void addCells(JPanel panel, List cells) {
+	private void addCells(JPanel panel, List<Cell> cells) {
 		for(int x=0; x<cells.size(); x++) {
-			GUICell cell = new GUICell((Cell)cells.get(x));
+			GUICell cell = new GUICell(cells.get(x));
 			panel.add(cell);
 			guiCells.add(cell);
 		}
@@ -138,7 +142,7 @@ public class MainWindow extends JFrame implements MonopolyGUI{
 	private GUICell queryCell(int index) {
 		Cell cell = GameMaster.instance().getGameBoard().getCell(index);
 		for(int x = 0; x < guiCells.size(); x++) {
-			GUICell guiCell = (GUICell)guiCells.get(x);
+			GUICell guiCell = guiCells.get(x);
 			if(guiCell.getCell() == cell) return guiCell;
 		}
 		return null;
@@ -216,7 +220,7 @@ public class MainWindow extends JFrame implements MonopolyGUI{
 			playerPanels[i].displayInfo();
 		}
 		for(int j = 0; j < guiCells.size(); j++ ) {
-			GUICell cell = (GUICell)guiCells.get(j);
+			GUICell cell = guiCells.get(j);
 			cell.displayInfo();
 		}
 	}

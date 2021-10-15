@@ -36,7 +36,7 @@ public class Main {
 				master.setTestMode(true);
 			}
 			try {
-				Class c = Class.forName(args[1]);
+				Class<?> c = Class.forName(args[1]);
 				gameBoard = (GameBoard)c.newInstance();
 			}
 			catch (ClassNotFoundException e) {
@@ -56,16 +56,7 @@ public class Main {
 			gameBoard = new GameBoardFull();
 		}
 		
-//      GameBoard gameBoard = new GameBoardFull();
-//		GameBoard gameBoard = new GameBoardCCMovePlayer();
-//		GameBoard gameBoard = new GameBoardCCLoseMoney();
-//		GameBoard gameBoard = new GameBoardCCJail();
-//		GameBoard gameBoard = new GameBoardUtility();
-//		GameBoard gameBoard = new GameBoardRailRoad();
-//		GameBoard gameBoard = new GameBoard14();
-//		GameBoard gameBoard = new SimpleGameBoard();
-//		GameBoard gameBoard = new GameBoardJail();
-//		GameBoard gameBoard = new GameBoardFreeParking();
+
 
 		master.setGameBoard(gameBoard);
 		int numPlayers = inputNumberOfPlayers(window);

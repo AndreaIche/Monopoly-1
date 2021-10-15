@@ -48,7 +48,7 @@ public class GameMasterTest extends TestCase {
         gameMaster.btnEndTurnClicked();
         TradeDialog dialog = gui.openTradeDialog();
         assertEquals(1, gameMaster.getNumberOfSellers());
-        ArrayList sellerList = gameMaster.getSellerList();
+        ArrayList<?> sellerList = (ArrayList<?>) gameMaster.getSellerList();
         assertEquals(gameMaster.getPlayer(0), sellerList.get(0));
         TradeDeal deal = dialog.getTradeDeal();
         RespondDialog respond = gui.openRespondDialog(deal);
@@ -85,7 +85,7 @@ public class GameMasterTest extends TestCase {
 	}
 	
 	public void testButtonPurchasePropertyClicked() {
-		MonopolyGUI gui = gameMaster.getGUI();
+		
 		gameMaster.movePlayer(0,1);
 		gameMaster.btnPurchasePropertyClicked();
 		assertEquals(gameMaster.getGameBoard().getCell(1), gameMaster.getCurrentPlayer().getAllProperties()[0]);
@@ -94,14 +94,14 @@ public class GameMasterTest extends TestCase {
 	
 	public void testButtonRollDiceClicked() {
 		gameMaster.reset();
-		MonopolyGUI gui = gameMaster.getGUI();
+		
 		gameMaster.btnRollDiceClicked();
 		assertEquals(0,gameMaster.getCurrentPlayerIndex());
 		assertEquals(gameMaster.getGameBoard().getCell(5), gameMaster.getPlayer(0).getPosition());
 	}
 	
 	public void testButtonTradeClicked() {
-		MonopolyGUI gui = gameMaster.getGUI();
+		
 		gameMaster.movePlayer(0,1);
 		gameMaster.getCurrentPlayer().purchase();
 		gameMaster.btnEndTurnClicked();

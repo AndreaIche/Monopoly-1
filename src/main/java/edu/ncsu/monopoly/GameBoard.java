@@ -1,8 +1,8 @@
 package edu.ncsu.monopoly;
 
 import java.util.ArrayList;
+
 import java.util.HashMap;
-import java.util.Hashtable;
 
 public class GameBoard {
 
@@ -30,7 +30,7 @@ public class GameBoard {
 	
 	public void addCell(PropertyCell cell) {
 		int propertyNumber = getPropertyNumberForColor(cell.getColorGroup());
-		colorGroups.put(cell.getColorGroup(), new Integer(propertyNumber + 1));
+		colorGroups.put(cell.getColorGroup(), (propertyNumber + 1));
         cells.add(cell);
 	}
 

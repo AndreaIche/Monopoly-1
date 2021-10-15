@@ -14,6 +14,7 @@ public class GUICell extends JPanel {
 	private JLabel[] lblPlayers = new JLabel[GameMaster.MAX_PLAYER];
 	
     public GUICell(Cell cell) {
+    
         this.cell = cell;
         setLayout(new OverlayLayout(this));
         setBorder(new BevelBorder(BevelBorder.LOWERED));
