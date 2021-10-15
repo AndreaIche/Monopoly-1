@@ -100,7 +100,7 @@ public class Player {
 	public String[] getMonopolies() {
 		ArrayList<String> monopolies = new ArrayList<>();
 		
-		Enumeration<String> colors =  (Enumeration<String>) colorGroups.keys();
+		Enumeration<String> colors =   colorGroups.keys();
 		while(colors.hasMoreElements()) {
 			String color = colors.nextElement();
             if(!(color.equals(RailRoadCell.COLOR_GROUP)) && !(color.equals(UtilityCell.COLOR_GROUP))) {

@@ -1,16 +1,21 @@
 package edu.ncsu.monopoly;
 
 public class MockGUI implements MonopolyGUI {
-    private boolean btnDrawCardState, btnEndTurnState, btnGetOutOfJailState;
+    private boolean btnDrawCardState;
+    private boolean btnEndTurnState;
+    private boolean btnGetOutOfJailState;
     private boolean[] btnTradeState = new boolean[2];
 
     public void enableEndTurnBtn(int playerIndex) {
+    	//Do nothing
     }
 
     public void enablePlayerTurn(int playerIndex) {
+    	//Do nothing
     }
 
     public void enablePurchaseBtn(int playerIndex) {
+    	//Do nothing
     }
 	public int[] getDiceRoll() {
 		int roll[] = new int[2];
@@ -36,19 +41,21 @@ public class MockGUI implements MonopolyGUI {
     }
 
     public void movePlayer(int index, int from, int to) {
+    	//Do nothing
     }
 
     public RespondDialog openRespondDialog(TradeDeal deal) {
-        RespondDialog dialog = new MockRespondDialog(deal);
-        return dialog;
+       
+        return  new MockRespondDialog(deal);
     }
 
     public TradeDialog openTradeDialog() {
-        TradeDialog dialog = new MockTradeDialog();
-        return dialog;
+       
+    	return new MockTradeDialog();
     }
 
     public void setBuyHouseEnabled(boolean b) {
+    	//Do nothing
     }
 
     public void setDrawCardEnabled(boolean b) {
@@ -64,9 +71,11 @@ public class MockGUI implements MonopolyGUI {
     }
 
     public void setPurchasePropertyEnabled(boolean enabled) {
+    	//Do nothing
     }
 
     public void setRollDiceEnabled(boolean b) {
+    	//Do nothing
     }
 
     public void setTradeEnabled(int index, boolean b) {
@@ -74,20 +83,23 @@ public class MockGUI implements MonopolyGUI {
     }
 
     public void showBuyHouseDialog(Player currentPlayer) {
+    	//Do nothing
     }
 
     public void showMessage(String string) {
+    	//Do nothing
     }
 
 	public int showUtilDiceRoll() {
-//		int[] diceValues = GameMaster.instance().rollDice();
-//		return diceValues[0] + diceValues[1];
+
 		return 10;
 	}
 
     public void startGame() {
+    	//Do nothing
     }
 
 	public void update() {
+		//Do nothing
 	}
 }
