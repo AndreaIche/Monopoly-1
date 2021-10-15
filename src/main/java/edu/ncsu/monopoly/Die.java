@@ -1,6 +1,6 @@
 package edu.ncsu.monopoly;
 
-public class Die { 
+public class Die {  
 	public static double random() {
 		return Math.random();
 	}

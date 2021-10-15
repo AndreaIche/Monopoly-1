@@ -14,7 +14,7 @@ public abstract class Cell {
 	}
 	
 	public int getPrice() {
-		return 0;
+		return 0; 
 	}
 
 	public boolean isAvailable() {
