@@ -3,7 +3,7 @@ package edu.ncsu.monopoly;
 import junit.framework.TestCase;
 
 public class MovePlayerCardTest extends TestCase {
-    GameMaster gameMaster;
+    GameMaster gameMaster; 
     Card movePlayerCard;
     
     protected void setUp() {
