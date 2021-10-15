@@ -8,6 +8,6 @@ public class JailCell extends Cell {
 	}
 	
 	public void playAction() {
-		
+		//no hace nada
 	}
 }

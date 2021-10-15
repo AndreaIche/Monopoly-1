@@ -2,21 +2,23 @@ package edu.ncsu.monopoly;
 
 import java.util.ArrayList;
 
-import java.util.HashMap;
+
+
+import java.util.Hashtable;
 
 public class GameBoard {
 
 	private ArrayList<Cell> cells = new ArrayList<>();
     private ArrayList<Card> chanceCards = new ArrayList<>();
 	//the key of colorGroups is the name of the color group.
-	private HashMap<String, Integer> colorGroups = new HashMap<>();
+	private Hashtable<String, Integer> colorGroups = new Hashtable<>();
 	private ArrayList<Card> communityChestCards = new ArrayList<>();
 	public GameBoard() {
 		Cell go = new GoCell();
 		addCell(go);
 	}
 
-    public void addCard(Card card) {
+    public void addCard(Card card) { 
         if(card.getCardType() == Card.TYPE_CC) {
             communityChestCards.add(card);
         } else {
@@ -83,7 +85,7 @@ public class GameBoard {
 
 	public Cell queryCell(String string) {
 		for(int i = 0; i < cells.size(); i++){
-			Cell temp = (Cell)cells.get(i); 
+			Cell temp = cells.get(i); 
 			if(temp.getName().equals(string)) {
 				return temp;
 			}
@@ -93,7 +95,7 @@ public class GameBoard {
 	
 	public int queryCellIndex(String string){
 		for(int i = 0; i < cells.size(); i++){
-			Cell temp = (Cell)cells.get(i); 
+			Cell temp = cells.get(i); 
 			if(temp.getName().equals(string)) {
 				return i;
 			}

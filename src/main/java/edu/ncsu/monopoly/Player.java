@@ -4,12 +4,13 @@ import java.util.ArrayList;
 
 import java.util.Enumeration;
 import java.util.HashMap;
+import java.util.Hashtable;
 
 
 
 public class Player {
 	//the key of colorGroups is the name of the color group.
-	private HashMap<String, Integer> colorGroups = new HashMap<>();
+	private Hashtable<String, Integer> colorGroups = new Hashtable<>();
 	private boolean inJail;
 	private int money;
 	private String name;
@@ -98,8 +99,8 @@ public class Player {
 	
 	public String[] getMonopolies() {
 		ArrayList<String> monopolies = new ArrayList<>();
-		@SuppressWarnings("unchecked")
-		Enumeration<String> colors =  (Enumeration<String>) colorGroups.keySet();
+		
+		Enumeration<String> colors =  (Enumeration<String>) colorGroups.keys();
 		while(colors.hasMoreElements()) {
 			String color = colors.nextElement();
             if(!(color.equals(RailRoadCell.COLOR_GROUP)) && !(color.equals(UtilityCell.COLOR_GROUP))) {

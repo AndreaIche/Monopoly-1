@@ -7,8 +7,10 @@ public class GoCell extends Cell {
 	}
 
 	public void playAction() {
+		//no hace nada
 	}
 	
 	void setName(String name) {
+		//no hace nada
 	}
 }
