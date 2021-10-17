@@ -2,16 +2,20 @@ package edu.ncsu.monopoly;
 
 public class UtilityCell extends Cell {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	public static final String COLOR_GROUP = "UTILITY";
-	private static int PRICE;
+	private static int price;
 
 	public static void setPrice(int price) {
-		UtilityCell.PRICE = price;
+		UtilityCell.price = price;
 	}
 
 	@Override
 	public int getPrice() {
-		return UtilityCell.PRICE;
+		return UtilityCell.price;
 	}
 
 	public int getRent(int diceRoll) {

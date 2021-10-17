@@ -71,4 +71,9 @@ public class GUICell extends JPanel {
 		lblPlayers[index].setOpaque(false);
         this.repaint();
 	}
+
+	public void close() {
+		// TODO Auto-generated method stub
+		
+	}
 }

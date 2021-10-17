@@ -95,9 +95,10 @@ public class MainWindow extends JFrame implements MonopolyGUI{
 		playerPanels[playerIndex].setPurchasePropertyEnabled(true);
 	}
 
+	
 	public int[] getDiceRoll() {
 		TestDiceRollDialog dialog = new TestDiceRollDialog(this);
-		dialog.show();
+	
 		return dialog.getDiceRoll();
 	}
 
@@ -121,11 +122,26 @@ public class MainWindow extends JFrame implements MonopolyGUI{
     }
 	
 	public void movePlayer(int index, int from, int to) {
-		GUICell fromCell = queryCell(from);
-		GUICell toCell = queryCell(to);
+		GUICell fromCell = null ;
+		GUICell toCell = null;
+		try {
+		fromCell = queryCell(from);
+		toCell = queryCell(to);
 		fromCell.removePlayer(index);
-		toCell.addPlayer(index);
+		toCell.addPlayer(index);}
+		catch(NullPointerException e) {
+			e.printStackTrace();
+		}
+		finally {
+			fromCell.close();
+			toCell.close();
+		}
 	}
+	/*	2GUICell fromCell = 1queryCell(from);
+	
+		GUICell toCell = queryCell(to);
+
+		toCell.addPlayer(index);*/
 
     public RespondDialog openRespondDialog(TradeDeal deal) {
         GUIRespondDialog dialog = new GUIRespondDialog();

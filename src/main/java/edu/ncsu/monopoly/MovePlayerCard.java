@@ -1,8 +1,6 @@
 package edu.ncsu.monopoly;
 
 
-import java.lang.System.Logger;
-import java.util.logging.Level;
 
 
 

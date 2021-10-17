@@ -18,7 +18,7 @@ public class MockGUI implements MonopolyGUI {
     	//Do nothing
     }
 	public int[] getDiceRoll() {
-		int roll[] = new int[2];
+		int[] roll = new int[2];
 		roll[0] = 2;
 		roll[1] = 3;
 		return roll;

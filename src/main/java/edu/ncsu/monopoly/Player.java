@@ -1,10 +1,11 @@
 package edu.ncsu.monopoly;
 
 import java.io.Serializable;
+
 import java.util.ArrayList;
 
 import java.util.Enumeration;
-import java.util.HashMap;
+
 import java.util.Hashtable;
 
 
@@ -19,7 +20,7 @@ public class Player implements Serializable{
 	private boolean inJail;
 	private int money;
 	private String name;
-	public static String COLOR_GROUP = "RAILROAD";
+	public static final String COLORGROUP = "RAILROAD";
 	private Cell position;
 	private ArrayList<PropertyCell> properties = new ArrayList<>();
 	private ArrayList<Cell> railroads = new ArrayList<>();
@@ -45,8 +46,8 @@ public class Player implements Serializable{
         if(property instanceof RailRoadCell) {
             railroads.add(property);
             colorGroups.put(
-                    Cell.getCOLOR_GROUP(), 
-                    Integer.valueOf(getPropertyNumberForColor(Cell.getCOLOR_GROUP())+1));
+                    Cell.getCOLORGROUP(), 
+                    Integer.valueOf(getPropertyNumberForColor(Cell.getCOLORGROUP())+1));
         }
         if(property instanceof UtilityCell) {
             utilities.add(property);
@@ -108,7 +109,7 @@ public class Player implements Serializable{
 		Enumeration<String> colors =   colorGroups.keys();
 		while(colors.hasMoreElements()) {
 			String color = colors.nextElement();
-            if(!(color.equals(Cell.getCOLOR_GROUP())) && !(color.equals(UtilityCell.COLOR_GROUP))) {
+            if(!(color.equals(Cell.getCOLORGROUP())) && !(color.equals(UtilityCell.COLOR_GROUP))) {
     			Integer num = colorGroups.get(color);
     			GameBoard gameBoard = GameMaster.instance().getGameBoard();
     			if(num.intValue() == gameBoard.getPropertyNumberForColor(color)) {
@@ -162,7 +163,7 @@ public class Player implements Serializable{
 	}
 
 	public int numberOfRR() {
-		return getPropertyNumberForColor(Cell.getCOLOR_GROUP());
+		return getPropertyNumberForColor(Cell.getCOLORGROUP());
 	}
 
 	public int numberOfUtil() {
