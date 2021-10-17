@@ -1,5 +1,6 @@
 package edu.ncsu.monopoly;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 import java.util.Enumeration;
@@ -8,7 +9,11 @@ import java.util.Hashtable;
 
 
 
-public class Player {
+public class Player implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	//the key of colorGroups is the name of the color group.
 	private Hashtable<String, Integer> colorGroups = new Hashtable<>();
 	private boolean inJail;

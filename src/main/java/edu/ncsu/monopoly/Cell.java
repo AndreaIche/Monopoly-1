@@ -1,6 +1,12 @@
 package edu.ncsu.monopoly;
 
-public abstract class Cell {
+import java.io.Serializable;
+
+public abstract class Cell implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private static String COLOR_GROUP = "RAILROAD";
 	private boolean available = true;
 	private String name;

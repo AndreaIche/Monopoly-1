@@ -18,7 +18,8 @@ public class GUIRespondDialog extends JDialog implements RespondDialog {
 	private boolean response;
     JTextArea txtMessage = new JTextArea();
     
-    public GUIRespondDialog() {
+    @SuppressWarnings("deprecation")
+	public GUIRespondDialog() {
         JButton btnYes = new JButton("Yes");
         JButton btnNo = new JButton("No");
         txtMessage.setPreferredSize(new Dimension(300, 200));
@@ -33,19 +34,12 @@ public class GUIRespondDialog extends JDialog implements RespondDialog {
         pnlButtons.add(btnNo);
         contentPane.add(pnlButtons, BorderLayout.SOUTH);
         
-        btnYes.addActionListener(new ActionListener(){
-            public void actionPerformed(ActionEvent e) {
-                response = true;
-                hide();
-            }
-        });
-
-        btnNo.addActionListener(new ActionListener(){
-            public void actionPerformed(ActionEvent e) {
-                response = false;
-                hide();
-            }
-        });
+        btnYes.addActionListener(e-> {response = true;
+        hide();});
+        
+        btnNo.addActionListener(e->{response = false;
+        hide();});
+        
     
         setModal(true);
         pack();

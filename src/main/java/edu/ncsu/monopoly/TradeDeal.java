@@ -1,7 +1,15 @@
 package edu.ncsu.monopoly;
 
-public class TradeDeal {
-    private int amount;
+import java.io.Serializable;
+
+public class TradeDeal implements Serializable {
+    
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private int amount;
     private int playerIndex;
     private String propertyName;
 
