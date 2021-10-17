@@ -6,7 +6,7 @@ public class CardsTest extends TestCase {
     Card ccCard, chanceCard;   
     
     GameMaster gameMaster;
-
+ 
     protected void setUp() {
         gameMaster = GameMaster.instance();
         gameMaster.setGameBoard(new GameBoardCCGainMoney());
