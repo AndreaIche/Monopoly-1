@@ -2,11 +2,10 @@ package edu.ncsu.monopoly.gui;
 
 import edu.ncsu.monopoly.Cell;
 import edu.ncsu.monopoly.Player;
-import edu.ncsu.monopoly.RailRoadCell;
 
 public class RRCellInfoFormatter implements CellInfoFormatter {
     public String format(Cell cell) {
-        RailRoadCell c = (RailRoadCell)cell;
+        Cell c = (Cell)cell;
         StringBuffer buf = new StringBuffer();
         Player owner = cell.getOwner();
         String ownerName = "";

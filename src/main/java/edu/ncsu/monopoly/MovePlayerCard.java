@@ -1,6 +1,11 @@
 package edu.ncsu.monopoly;
 
 
+import java.lang.System.Logger;
+import java.util.logging.Level;
+
+
+
 public class MovePlayerCard extends Card {
     
     private String destination;
@@ -11,7 +16,8 @@ public class MovePlayerCard extends Card {
         this.type = cardType;
     }
 
-    public void applyAction() {
+   
+	public void applyAction() {
         Player currentPlayer = GameMaster.instance().getCurrentPlayer();
         Cell currentPosition = currentPlayer.getPosition();
         int newCell = GameMaster.instance().getGameBoard().queryCellIndex(destination);
@@ -21,14 +27,20 @@ public class MovePlayerCard extends Card {
             diceValue = (GameMaster.instance().getGameBoard().getCellNumber() + 
                     (newCell - currentCell));
         }
-        else if(currentCell <= newCell) {
+        if(currentCell < newCell) {
             diceValue = newCell - currentCell;
         }
-        System.out.println(diceValue);
+        if (currentCell == newCell){
+        	 diceValue = newCell - currentCell;
+        }
+    
+		System.out.println(diceValue);
         GameMaster.instance().movePlayer(currentPlayer, diceValue);
     }
 
-    public int getCardType() {
+	
+
+	public int getCardType() {
         return type;
     }
 

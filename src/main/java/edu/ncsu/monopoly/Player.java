@@ -14,7 +14,7 @@ public class Player {
 	private boolean inJail;
 	private int money;
 	private String name;
-
+	public static String COLOR_GROUP = "RAILROAD";
 	private Cell position;
 	private ArrayList<PropertyCell> properties = new ArrayList<>();
 	private ArrayList<Cell> railroads = new ArrayList<>();
@@ -40,8 +40,8 @@ public class Player {
         if(property instanceof RailRoadCell) {
             railroads.add(property);
             colorGroups.put(
-                    RailRoadCell.COLOR_GROUP, 
-                    Integer.valueOf(getPropertyNumberForColor(RailRoadCell.COLOR_GROUP)+1));
+                    Cell.getCOLOR_GROUP(), 
+                    Integer.valueOf(getPropertyNumberForColor(Cell.getCOLOR_GROUP())+1));
         }
         if(property instanceof UtilityCell) {
             utilities.add(property);
@@ -103,7 +103,7 @@ public class Player {
 		Enumeration<String> colors =   colorGroups.keys();
 		while(colors.hasMoreElements()) {
 			String color = colors.nextElement();
-            if(!(color.equals(RailRoadCell.COLOR_GROUP)) && !(color.equals(UtilityCell.COLOR_GROUP))) {
+            if(!(color.equals(Cell.getCOLOR_GROUP())) && !(color.equals(UtilityCell.COLOR_GROUP))) {
     			Integer num = colorGroups.get(color);
     			GameBoard gameBoard = GameMaster.instance().getGameBoard();
     			if(num.intValue() == gameBoard.getPropertyNumberForColor(color)) {
@@ -157,7 +157,7 @@ public class Player {
 	}
 
 	public int numberOfRR() {
-		return getPropertyNumberForColor(RailRoadCell.COLOR_GROUP);
+		return getPropertyNumberForColor(Cell.getCOLOR_GROUP());
 	}
 
 	public int numberOfUtil() {
@@ -188,7 +188,7 @@ public class Player {
 				purchaseProperty(cell);
 			}
 			if(c instanceof RailRoadCell) {
-				RailRoadCell cell = (RailRoadCell)c;
+				Cell cell = c;
 				purchaseRailRoad(cell);
 			}
 			if(c instanceof UtilityCell) {
@@ -217,7 +217,7 @@ public class Player {
         buyProperty(cell, cell.getPrice());
 	}
 
-	private void purchaseRailRoad(RailRoadCell cell) {
+	private void purchaseRailRoad(Cell cell) {
 	    buyProperty(cell, cell.getPrice());
 	}
 

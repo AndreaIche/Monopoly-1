@@ -1,24 +1,25 @@
 package edu.ncsu.monopoly;
 
 public class RailRoadCell extends Cell {
-	static private int baseRent;
-	static public String COLOR_GROUP = "RAILROAD";
-	static private int price;
+	private static  int baseRent;
+	private static  int price1;
 
 	public static void setBaseRent(int baseRent) {
 		RailRoadCell.baseRent = baseRent;
 	}
 
+	
 	public static void setPrice(int price) {
-		RailRoadCell.price = price;
+		RailRoadCell.price1 = price;
 	}
 	
+	@Override
 	public int getPrice() {
-		return RailRoadCell.price;
+		return RailRoadCell.price1;
 	}
 
 	public int getRent() {
-		return RailRoadCell.baseRent * (int)Math.pow(2, owner.numberOfRR() - 1);
+		return RailRoadCell.baseRent * (int)Math.pow(2, owner.numberOfRR() - 1f);
 	}
 	
 	public void playAction() {

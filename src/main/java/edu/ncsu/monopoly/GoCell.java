@@ -10,7 +10,9 @@ public class GoCell extends Cell {
 		//no hace nada
 	}
 	
+	@Override
 	void setName(String name) {
+		
 		//no hace nada
 	}
 }
