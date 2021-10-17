@@ -7,7 +7,7 @@ public abstract class Cell implements Serializable{
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private static String COLORGROUP = "RAILROAD";
+	private static String colorGroup1 = "RAILROAD";
 	private boolean available = true;
 	private String name;
 	protected Player owner;
@@ -47,11 +47,11 @@ public abstract class Cell implements Serializable{
         return name;
     }
 
-    public static String getCOLORGROUP() {
-		return COLORGROUP;
+    public static String getColorGroup1() {
+		return colorGroup1;
 	}
 
-	public static void setCOLORGROUP(String colorGroup) {
-		Cell.COLORGROUP = colorGroup;
+	public static void setColorGroup1(String colorGroup) {
+		Cell.colorGroup1 = colorGroup;
 	}
 }

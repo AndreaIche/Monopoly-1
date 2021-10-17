@@ -1,6 +1,10 @@
 package edu.ncsu.monopoly;
 
 public class PropertyCell extends Cell {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private String colorGroup;
 	private int housePrice;
 	private int numHouses;

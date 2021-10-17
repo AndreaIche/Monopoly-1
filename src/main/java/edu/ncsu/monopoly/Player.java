@@ -46,8 +46,8 @@ public class Player implements Serializable{
         if(property instanceof RailRoadCell) {
             railroads.add(property);
             colorGroups.put(
-                    Cell.getCOLORGROUP(), 
-                    Integer.valueOf(getPropertyNumberForColor(Cell.getCOLORGROUP())+1));
+                    Cell.getColorGroup1(), 
+                    Integer.valueOf(getPropertyNumberForColor(Cell.getColorGroup1())+1));
         }
         if(property instanceof UtilityCell) {
             utilities.add(property);
@@ -109,7 +109,7 @@ public class Player implements Serializable{
 		Enumeration<String> colors =   colorGroups.keys();
 		while(colors.hasMoreElements()) {
 			String color = colors.nextElement();
-            if(!(color.equals(Cell.getCOLORGROUP())) && !(color.equals(UtilityCell.COLOR_GROUP))) {
+            if(!(color.equals(Cell.getColorGroup1())) && !(color.equals(UtilityCell.COLOR_GROUP))) {
     			Integer num = colorGroups.get(color);
     			GameBoard gameBoard = GameMaster.instance().getGameBoard();
     			if(num.intValue() == gameBoard.getPropertyNumberForColor(color)) {
@@ -163,7 +163,7 @@ public class Player implements Serializable{
 	}
 
 	public int numberOfRR() {
-		return getPropertyNumberForColor(Cell.getCOLORGROUP());
+		return getPropertyNumberForColor(Cell.getColorGroup1());
 	}
 
 	public int numberOfUtil() {

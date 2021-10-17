@@ -137,23 +137,19 @@ public class MainWindow extends JFrame implements MonopolyGUI{
 			toCell.close();
 		}
 	}
-	/*	2GUICell fromCell = 1queryCell(from);
 	
-		GUICell toCell = queryCell(to);
-
-		toCell.addPlayer(index);*/
 
     public RespondDialog openRespondDialog(TradeDeal deal) {
         GUIRespondDialog dialog = new GUIRespondDialog();
         dialog.setDeal(deal);
-        dialog.show();
+     
         return dialog;
     }
 
     public TradeDialog openTradeDialog() {
-        GUITradeDialog dialog = new GUITradeDialog(this);
-        dialog.show();
-        return dialog;
+        return new GUITradeDialog(this);
+  
+        
     }
 	
 	private GUICell queryCell(int index) {
@@ -213,8 +209,8 @@ public class MainWindow extends JFrame implements MonopolyGUI{
 	}
 
     public void showBuyHouseDialog(Player currentPlayer) {
-        BuyHouseDialog dialog = new BuyHouseDialog(currentPlayer);
-        dialog.show();
+        new BuyHouseDialog(currentPlayer);
+       
     }
 
     public void showMessage(String msg) {
