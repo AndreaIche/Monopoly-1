@@ -5,7 +5,7 @@ public class GameBoardCCGainMoney extends GameBoard {
     public GameBoardCCGainMoney() {
 		super();
 		PropertyCell blue1 = new PropertyCell();
-		
+		  
 		CardCell cc1 = new CardCell(Card.TYPE_CC, "Community Chest 1");
 		JailCell jail = new JailCell();
 		CardCell chance1 = new CardCell(Card.TYPE_CHANCE, "Chance 1");
