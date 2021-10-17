@@ -25,3 +25,4 @@ public class CardsTest extends TestCase {
         assertEquals(Card.TYPE_CHANCE, chanceCard.getCardType());
     }
 }
+ 
