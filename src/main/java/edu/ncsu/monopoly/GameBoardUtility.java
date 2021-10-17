@@ -32,7 +32,7 @@ public class GameBoardUtility extends GameBoard {
 		
 		u1.setName("Utility 1");
 		u2.setName("Utility 2");
-		UtilityCell.setPrice(150);
+		UtilityCell.setPrice1(150);
 		
 		blue1.setPrice(100);
 		

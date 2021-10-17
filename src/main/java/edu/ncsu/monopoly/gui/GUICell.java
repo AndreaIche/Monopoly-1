@@ -12,7 +12,7 @@ public class GUICell extends JPanel {
 	
 	/**
 	 * 
-	 */
+	 */ 
 	private static final long serialVersionUID = 1L;
 	private JLabel lblInfo;
 	private JLabel[] lblPlayers = new JLabel[GameMaster.MAX_PLAYER];
@@ -73,7 +73,7 @@ public class GUICell extends JPanel {
 	}
 
 	public void close() {
-		// TODO Auto-generated method stub
+	//NADA
 		
 	}
 }

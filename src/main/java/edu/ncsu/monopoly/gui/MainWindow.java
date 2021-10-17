@@ -194,7 +194,7 @@ public class MainWindow extends JFrame implements MonopolyGUI{
     public void setTradeEnabled(int index, boolean b) {
         playerPanels[index].setTradeEnabled(b);
     }
-	
+	 
 	public void setupGameBoard(GameBoard board) {
 		Dimension dimension = GameBoardUtil.calculateDimension(board.getCellNumber());
 		northPanel.setLayout(new GridLayout(1, dimension.width + 2));

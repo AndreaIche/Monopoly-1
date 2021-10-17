@@ -7,15 +7,15 @@ public class UtilityCell extends Cell {
 	 */
 	private static final long serialVersionUID = 1L;
 	public static final String COLOR_GROUP = "UTILITY";
-	private static int price;
+	private static int price1;
 
-	public static void setPrice(int price) {
-		UtilityCell.price = price;
+	public static void setPrice1(int price) {
+		UtilityCell.price1 = price;
 	}
 
 	@Override
 	public int getPrice() {
-		return UtilityCell.price;
+		return UtilityCell.price1;
 	}
 
 	public int getRent(int diceRoll) {

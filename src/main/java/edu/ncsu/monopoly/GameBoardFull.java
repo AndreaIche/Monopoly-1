@@ -203,7 +203,7 @@ public class GameBoardFull extends GameBoard {
         rr3.setName("B. & O. RailRoad");
         rr4.setName("Short Line");
         
-        UtilityCell.setPrice(150);
+        UtilityCell.setPrice1(150);
         
         u1.setName("Electric Company");
         u2.setName("Water Works");
