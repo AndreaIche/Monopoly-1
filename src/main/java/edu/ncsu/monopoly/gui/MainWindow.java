@@ -121,14 +121,14 @@ public class MainWindow extends JFrame implements MonopolyGUI{
         return playerPanels[i].isTradeButtonEnabled();
     }
 	
+	@SuppressWarnings("null")
 	public void movePlayer(int index, int from, int to) {
-		GUICell fromCell = null ;
-		GUICell toCell = null;
+		GUICell fromCell=null;
+		GUICell toCell=null;
 		try {
-		fromCell = queryCell(from);
-		toCell = queryCell(to);
-		fromCell.removePlayer(index);
-		toCell.addPlayer(index);}
+			toCell = queryCell(to);
+			toCell.addPlayer(index);}
+		
 		catch(NullPointerException e) {
 			e.printStackTrace();
 		}
