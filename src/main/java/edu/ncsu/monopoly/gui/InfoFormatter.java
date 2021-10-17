@@ -1,15 +1,21 @@
 package edu.ncsu.monopoly.gui;
 
-import java.util.Hashtable;
+import java.util.HashMap;
+
+
 
 import edu.ncsu.monopoly.*;
 
 public class InfoFormatter {
-    static Hashtable cellInfoFormatters = null;
+	
+	private InfoFormatter(){
+		throw new IllegalStateException("Utility class");
+	}
+    static HashMap<Class<?>, CellInfoFormatter> cellInfoFormatters = null;
     
     static {
         if (cellInfoFormatters == null) {
-            cellInfoFormatters = new Hashtable();
+            cellInfoFormatters = new HashMap<>();
             addFormatters();
         }
     }
@@ -35,7 +41,7 @@ public class InfoFormatter {
 
     public static String cellInfo(Cell cell) {
         CellInfoFormatter formatter =
-                (CellInfoFormatter) cellInfoFormatters.get(cell.getClass());
+ cellInfoFormatters.get(cell.getClass());
         return formatter.format(cell);
     }
 

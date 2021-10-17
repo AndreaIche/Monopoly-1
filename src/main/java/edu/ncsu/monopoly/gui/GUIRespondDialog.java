@@ -11,7 +11,11 @@ import edu.ncsu.monopoly.TradeDeal;
 
 
 public class GUIRespondDialog extends JDialog implements RespondDialog {
-    private boolean response;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private boolean response;
     JTextArea txtMessage = new JTextArea();
     
     public GUIRespondDialog() {

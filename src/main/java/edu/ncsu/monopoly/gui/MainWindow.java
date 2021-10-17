@@ -53,6 +53,7 @@ public class MainWindow extends JFrame implements MonopolyGUI{
 		c.add(westPanel, BorderLayout.WEST);
 		
 		this.addWindowListener(new WindowAdapter(){
+			@Override
 			public void windowClosing(WindowEvent e) {
 				System.exit(0);
 			}

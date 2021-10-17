@@ -5,8 +5,8 @@ import edu.ncsu.monopoly.Player;
 
 public class RRCellInfoFormatter implements CellInfoFormatter {
     public String format(Cell cell) {
-        Cell c = (Cell)cell;
-        StringBuffer buf = new StringBuffer();
+        Cell c = cell;
+        StringBuilder buf = new StringBuilder();
         Player owner = cell.getOwner();
         String ownerName = "";
         if(owner != null) {

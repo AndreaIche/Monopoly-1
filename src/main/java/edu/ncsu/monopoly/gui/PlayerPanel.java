@@ -18,7 +18,7 @@ import edu.ncsu.monopoly.Card;
 import edu.ncsu.monopoly.GameMaster;
 import edu.ncsu.monopoly.Player;
 
-public class PlayerPanel extends JPanel {
+public class PlayerPanel  extends JPanel {
 
     /**
 	 * 
@@ -97,57 +97,37 @@ public class PlayerPanel extends JPanel {
         btnTrade.setEnabled(false);
 
         setBorder(new BevelBorder(BevelBorder.RAISED));
+        btnRollDice.addActionListener(e -> GameMaster.instance().btnRollDiceClicked());
+        
+        
+        
+        btnEndTurn.addActionListener(e -> GameMaster.instance().btnEndTurnClicked());
+        
+       
 
-        btnRollDice.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                GameMaster.instance().btnRollDiceClicked();
-            }
-        });
+        btnPurchaseProperty.addActionListener(e -> GameMaster.instance().btnPurchasePropertyClicked());
+        
+        
+        btnBuyHouse.addActionListener(e->GameMaster.instance().btnBuyHouseClicked());
+        
+     
+        btnGetOutOfJail.addActionListener(e -> GameMaster.instance().btnGetOutOfJailClicked());
+        
+        
+        btnDrawCard.addActionListener(e -> {Card card = GameMaster.instance().btnDrawCardClicked();
+        JOptionPane
+        .showMessageDialog(PlayerPanel.this, card.getLabel());
+        displayInfo();});
+        
+        btnTrade.addActionListener(e -> GameMaster.instance().btnTradeClicked());
 
-        btnEndTurn.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                GameMaster.instance().btnEndTurnClicked();
-            }
-        });
-
-        btnPurchaseProperty.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                GameMaster.instance().btnPurchasePropertyClicked();
-            }
-        });
-
-        btnBuyHouse.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                GameMaster.instance().btnBuyHouseClicked();
-            }
-        });
-
-        btnGetOutOfJail.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                GameMaster.instance().btnGetOutOfJailClicked();
-            }
-        });
-
-        btnDrawCard.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                Card card = GameMaster.instance().btnDrawCardClicked();
-                JOptionPane
-                        .showMessageDialog(PlayerPanel.this, card.getLabel());
-                displayInfo();
-            }
-        });
-
-        btnTrade.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                GameMaster.instance().btnTradeClicked();
-            }
-        });
+        
     }
 
     public void displayInfo() {
         lblName.setText(player.getName());
         lblMoney.setText("$ " + player.getMoney());
-        StringBuffer buf = new StringBuffer();
+        StringBuilder buf = new StringBuilder();
         Cell[] cells = player.getAllProperties();
         for (int i = 0; i < cells.length; i++) {
             buf.append(cells[i] + "\n");

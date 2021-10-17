@@ -27,6 +27,8 @@ public class Main {
 		return numPlayers;
 	}
 
+	
+	@SuppressWarnings("deprecation")
 	public static void main(String[] args) {
 		GameMaster master = GameMaster.instance();
 		MainWindow window = new MainWindow();

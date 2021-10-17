@@ -9,6 +9,10 @@ import edu.ncsu.monopoly.GameBoard;
 
 public class GameBoardUtil {
     
+	private GameBoardUtil() {
+	    throw new IllegalStateException("Utility class");
+	  }
+	
 	public static Dimension calculateDimension(int i) {
 		i = i - 4;
 		int shortSide = i / 4;

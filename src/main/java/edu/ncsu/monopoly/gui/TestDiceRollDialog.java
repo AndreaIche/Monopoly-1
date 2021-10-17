@@ -23,7 +23,8 @@ public class TestDiceRollDialog extends JDialog {
     private JTextField txtDiceRoll;
     private int[] diceRoll;
     
-    public TestDiceRollDialog(Frame parent) {
+    @SuppressWarnings("deprecation")
+	public TestDiceRollDialog(Frame parent) {
         super(parent);
         
         setTitle("Dice Roll Dialog");
@@ -40,39 +41,33 @@ public class TestDiceRollDialog extends JDialog {
         contentPane.add(btnOK);
         contentPane.add(btnCancel);
         
-        btnCancel.addActionListener(new ActionListener(){
-            public void actionPerformed(ActionEvent e) {
-                TestDiceRollDialog.this.hide();
-                diceRoll = new int[2];
-                diceRoll[0] = 0;
-                diceRoll[1] = 0;
+        btnCancel.addActionListener(e->{TestDiceRollDialog.this.hide();
+        diceRoll = new int[2];
+        diceRoll[0] = 0;
+        diceRoll[1] = 0;});
+      
+        btnOK.addActionListener(e -> {int amount = 0;
+        try{
+            amount = Integer.parseInt(txtDiceRoll.getText());
+        } catch(NumberFormatException nfe) {
+            JOptionPane.showMessageDialog(TestDiceRollDialog.this,
+                    "Amount should be an integer", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        if(amount > 0) {
+            diceRoll = new int[2];
+            if((amount % 2) == 0) {
+            	diceRoll[0] = amount / 2;
+            	diceRoll[1] = amount / 2;
             }
-        });
-        
-        btnOK.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                int amount = 0;
-                try{
-                    amount = Integer.parseInt(txtDiceRoll.getText());
-                } catch(NumberFormatException nfe) {
-                    JOptionPane.showMessageDialog(TestDiceRollDialog.this,
-                            "Amount should be an integer", "Error", JOptionPane.ERROR_MESSAGE);
-                    return;
-                }
-                if(amount > 0) {
-	                diceRoll = new int[2];
-	                if((amount % 2) == 0) {
-	                	diceRoll[0] = amount / 2;
-	                	diceRoll[1] = amount / 2;
-	                }
-	                else {
-	                	diceRoll[0] = amount / 2;
-	                	diceRoll[1] = (amount / 2) + 1;
-	                }
-                }
-                hide();
+            else {
+            	diceRoll[0] = amount / 2;
+            	diceRoll[1] = (amount / 2) + 1;
             }
-        });
+        }
+        hide();});
+       
+     
         
         this.pack();
     }

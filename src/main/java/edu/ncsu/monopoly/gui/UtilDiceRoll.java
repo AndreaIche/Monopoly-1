@@ -19,6 +19,7 @@ public class UtilDiceRoll extends JDialog {
 	 */
 	private static final long serialVersionUID = 1L;
 
+	@SuppressWarnings("deprecation")
 	public static int showDialog() {
 		UtilDiceRoll dialog = new UtilDiceRoll();
 		dialog.show();
@@ -40,16 +41,11 @@ public class UtilDiceRoll extends JDialog {
 		contentPane.setLayout(new BorderLayout());
 		contentPane.add(lblPrompt, BorderLayout.CENTER);
 		contentPane.add(pnlButtons, BorderLayout.SOUTH);
-		btnDice.addActionListener(new ActionListener(){
-			public void actionPerformed(ActionEvent arg0) {
-				rollDice();
-			}
-		});
-		btnOK.addActionListener(new ActionListener(){
-			public void actionPerformed(ActionEvent arg0) {
-				okClicked();
-			}
-		});
+		
+		btnDice.addActionListener(arg0 ->rollDice());
+		
+		btnOK.addActionListener(arg0 ->okClicked() );
+		
 		this.pack();
 	}
 	
